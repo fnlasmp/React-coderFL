@@ -1,0 +1,19 @@
+.container-navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: green;
+  align-items: left;
+  height: 50px;
+  padding: 0 50px;
+  padding-top: 10px;
+}
+
+.container-navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+li {
+  list-style: none;
+}
