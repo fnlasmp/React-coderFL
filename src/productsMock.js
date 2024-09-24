@@ -1,0 +1,38 @@
+export const products = [
+  {
+    id: "1",
+    title: "remera",
+    price: "1000",
+    description: "esto es una remera",
+    image: "aca va el link de cloudinary",
+    stock: "20",
+    category: "deportiva",
+  },
+  {
+    id: "2",
+    title: "pantalon",
+    price: "1500",
+    description: "esto es un pantalon",
+    image: "aca va el link de cloudinary",
+    stock: "10",
+    category: "formal",
+  },
+  {
+    id: "3",
+    title: "jean",
+    price: "1800",
+    description: "esto es un pantalon de jean",
+    image: "aca va el link de cloudinary",
+    stock: "12",
+    category: "jean",
+  },
+  {
+    id: "4",
+    title: "short",
+    price: "800",
+    description: "esto es un short",
+    image: "aca va el link de cloudinary",
+    stock: "6",
+    category: "short de baño",
+  },
+];

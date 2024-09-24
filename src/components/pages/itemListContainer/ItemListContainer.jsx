@@ -1,27 +1,40 @@
-import { useState, useEffect } from "react";
-import ProductCard from "../../common/productCard/ProductCard";
+import { useEffect, useState } from "react";
+import { products } from "../../../productsMock";
+import ItemList from "./ItemList";
 
-const itemListContainer = (props) => {
-  //fetching de datos
-  console.log("Hacemos la peticion");
-  //todos los hooks son funciones
-  //useEffect Se puede colocar en cualquier partes ante del return, recibe una funcion y un array
+const itemListContainer = () => {
+  const [items, setItems] = useState([]);
+  // un fetching ---> esto devuelve una promesa
+
+  //crear una promesa
+  //resolve, reject, son dos funciones que van dentro de la promesa
 
   useEffect(() => {
-    //Todo lo que se coloque aqui dentro no se volvera a actualizar, solo el primer renderizado, y se ejecuta despues de todo
-  }, []); //array de dependencia, dentro se coloca una excepcion para volver a ejecutar todo siempre y cuando encuentre cambios
-  return (
-    <div>
-      <h1>Listado de productos</h1>
-      <div>
-        {/* productos */}
-        <div>
-          <ProductCard titulo="remera" precio={800} />
-          <ProductCard titulo="jean" precio={1300} />
-        </div>
-      </div>
-    </div>
-  );
+    const getProducts = new Promise((res, rej) => {
+      let isLoged = true;
+
+      if (isLoged) {
+        res(products);
+      } else {
+        rej({ message: "algo salio mal" });
+      }
+    });
+
+    //.then().catch() ---> manejar la promesa
+    //res va al .then, rej al .catch
+
+    getProducts
+      .then((response) => {
+        console.log("entro en el then ", response);
+        setItems(response);
+      })
+
+      .catch((err) => {
+        console.log("entro en el catch ", err);
+      });
+  }, []);
+
+  return <ItemList items={items} />;
 };
 
 export default itemListContainer;
