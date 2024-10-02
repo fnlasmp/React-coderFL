@@ -21,11 +21,11 @@ function App() {
     <div>
       <Navbar />
       {/* si montarComponente es un thruty pinto ItemList. sino null */}
-      {montarComponente ? <ItemListContainer /> : null}
-      <button onClick={montarDesmontar}>Montar/desmontar</button>
-      {/* <ItemListContainer /> */}
+      {/* {montarComponente ? <ItemListContainer /> : null} */}
+      {/* <button onClick={montarDesmontar}>Montar/desmontar</button> */}
+      <ItemListContainer />
       {/* <Footer /> */}
-      <Counter />
+      {/* <Counter /> */}
     </div>
   );
 }
