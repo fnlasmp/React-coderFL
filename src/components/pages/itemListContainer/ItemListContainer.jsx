@@ -1,20 +1,29 @@
 import { useEffect, useState } from "react";
 import { products } from "../../../productsMock";
 import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
 
-const itemListContainer = () => {
+const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  // un fetching ---> esto devuelve una promesa
 
+  const { categoryName } = useParams();
+  console.log(categoryName);
+
+  //va a ser falsy en home y thruty en la categoria
+
+  // un fetching ---> esto devuelve una promesa
   //crear una promesa
   //resolve, reject, son dos funciones que van dentro de la promesa
 
   useEffect(() => {
+    const filteredProducts = products.filter(
+      (product) => product.category === categoryName
+    );
     const getProducts = new Promise((res, rej) => {
       let isLoged = true;
 
       if (isLoged) {
-        res(products);
+        res(categoryName ? filteredProducts : products);
       } else {
         rej({ message: "algo salio mal" });
       }
@@ -32,9 +41,9 @@ const itemListContainer = () => {
       .catch((err) => {
         console.log("entro en el catch ", err);
       });
-  }, []);
+  }, [categoryName]);
 
   return <ItemList items={items} />;
 };
 
-export default itemListContainer;
+export default ItemListContainer;

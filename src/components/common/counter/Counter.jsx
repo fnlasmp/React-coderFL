@@ -7,7 +7,9 @@ const Counter = ({ contador, sumar, restar }) => {
         Sumar
       </Button>
       <h1>{contador}</h1>
-      <Button onClick={restar}>Restar</Button>
+      <Button variant="contained" onClick={restar}>
+        Restar
+      </Button>
 
       <Button variant="outlined">Agregar al carrito</Button>
     </div>

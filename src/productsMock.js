@@ -1,38 +1,42 @@
 export const products = [
   {
     id: "1",
-    title: "remera",
+    title: "remera Polo",
     price: "1000",
-    description: "esto es una remera",
-    image: "aca va el link de cloudinary",
+    description: "descripcion de una remera",
+    imageUrl:
+      "https://res.cloudinary.com/dp0zju2rd/image/upload/v1728074240/tshirt1_bwoikf.jpg",
     stock: "20",
-    category: "deportiva",
+    category: "remeras",
   },
   {
     id: "2",
-    title: "pantalon",
+    title: "pantalon formal",
     price: "1500",
-    description: "esto es un pantalon",
-    image: "aca va el link de cloudinary",
+    description: "descripcion de un pantalon",
+    imageUrl:
+      "https://res.cloudinary.com/dp0zju2rd/image/upload/v1728074240/formalpant1_iff23i.jpg",
     stock: "10",
-    category: "formal",
+    category: "pantalones",
   },
   {
     id: "3",
     title: "jean",
     price: "1800",
-    description: "esto es un pantalon de jean",
-    image: "aca va el link de cloudinary",
+    description: "descripcion de un pantalon de jean",
+    imageUrl:
+      "https://res.cloudinary.com/dp0zju2rd/image/upload/v1728074240/jean1_klk6bs.jpg",
     stock: "12",
-    category: "jean",
+    category: "pantalones",
   },
   {
     id: "4",
-    title: "short",
+    title: "short de baño",
     price: "800",
-    description: "esto es un short",
-    image: "aca va el link de cloudinary",
+    description: "descripcion de un short",
+    imageUrl:
+      "https://res.cloudinary.com/dp0zju2rd/image/upload/v1728074241/swimshort1_jc1z0c.jpg",
     stock: "6",
-    category: "short de baño",
+    category: "shorts",
   },
 ];
