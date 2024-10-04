@@ -1,5 +1,6 @@
 import React from "react";
 import Counter from "./Counter";
+import { useState } from "react";
 
 const CounterContainer = () => {
   const [contador, setContador] = useState(1); //x = [variable, funcion que hace camb.](array)

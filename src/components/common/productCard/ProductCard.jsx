@@ -7,13 +7,14 @@ import {
   Typography,
 } from "@mui/material";
 import "./productCard.css";
+import { Link } from "react-router-dom";
 
-const ProductCard = ({ title, price, description, image }) => {
+const ProductCard = ({ title, price, description, imageUrl, id }) => {
   //{} desestructuro
   // const { title, price, description, image } = props;
   return (
-    <Card sx={{ Width: 345, height: 320 }}>
-      <CardMedia sx={{ height: 140 }} image={"image"} title="title cloth" />
+    <Card sx={{ Width: 350, height: 320 }}>
+      <CardMedia sx={{ height: 140 }} image={imageUrl} title="title cloth" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {title}
@@ -26,21 +27,12 @@ const ProductCard = ({ title, price, description, image }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Ver detalles</Button>
+        <Link to={`/productDetail/${id}`}>
+          <Button size="small">Ver detalles</Button>
+        </Link>
       </CardActions>
     </Card>
   );
-  // <div>
-  {
-    /* <h2>{title}</h2>
-      <h3>{price}</h3>
-      <h3>{description}</h3>
-      <button>ver detalles</button> */
-  }
-
-  {
-    /* </div> */
-  }
 };
 
 export default ProductCard;

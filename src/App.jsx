@@ -1,32 +1,27 @@
-import { useState } from "react";
-import Counter from "./components/common/counter/Counter";
-import Footer from "./components/layouts/footer/Footer";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/layouts/navbar/Navbar";
-import ItemListContainer from "./components/pages/itemListContainer/itemListContainer";
+import CartContainer from "./components/pages/cart/CartContainer";
+import ItemDetailContainer from "./components/pages/itemDetail/ItemDetailContainer";
+import Footer from "./components/layouts/footer/Footer";
+import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer";
 
-// Para correr consola Npm run dev
-//Para importar un default no lleva {}
-//Importacion nombrada lleva {}
-
-//ctrl + k + c para comentar una linea
-//comentarios dentro del return usando llaves y /* */   {/* */}.
-// o ctrl + } para comentar lo seleccionado
 function App() {
-  const [montarComponente, setMontarComponente] = useState(false);
-  const montarDesmontar = () => {
-    setMontarComponente(!montarComponente);
-  };
   return (
-    // <Navbar /> esto es lo mismo que Navbar() en js
-    <div>
+    <BrowserRouter>
       <Navbar />
-      {/* si montarComponente es un thruty pinto ItemList. sino null */}
-      {/* {montarComponente ? <ItemListContainer /> : null} */}
-      {/* <button onClick={montarDesmontar}>Montar/desmontar</button> */}
-      <ItemListContainer />
-      {/* <Footer /> */}
-      {/* <Counter /> */}
-    </div>
+      <Routes>
+        <Route path={"/"} element={<ItemListContainer />} />
+        <Route
+          path={"/category/:categoryName"}
+          element={<ItemListContainer />}
+        />
+        <Route path={"/cart"} element={<CartContainer />} />
+        <Route path={"/productDetail/:id"} element={<ItemDetailContainer />} />
+        <Route path={"*"} element={<h2>404 page not found</h2>} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
 }
 
