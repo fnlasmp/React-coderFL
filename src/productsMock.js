@@ -6,7 +6,7 @@ export const products = [
     description: "descripcion de una remera",
     imageUrl:
       "https://res.cloudinary.com/dp0zju2rd/image/upload/v1728074240/tshirt1_bwoikf.jpg",
-    stock: "20",
+    stock: "7",
     category: "remeras",
   },
   {
@@ -26,7 +26,7 @@ export const products = [
     description: "descripcion de un pantalon de jean",
     imageUrl:
       "https://res.cloudinary.com/dp0zju2rd/image/upload/v1728074240/jean1_klk6bs.jpg",
-    stock: "12",
+    stock: "8",
     category: "pantalones",
   },
   {

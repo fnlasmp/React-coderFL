@@ -19,6 +19,7 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const onAdd = (quantity) => {
+    console.log("Se agrego al carrito");
     let productoCarrito = { ...item, quantity };
   };
 
