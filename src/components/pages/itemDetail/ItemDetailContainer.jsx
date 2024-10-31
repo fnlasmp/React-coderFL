@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ItemDetail } from "./ItemDetail";
 import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../../../context/CartContext";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
+  const { addToCart } = useContext(CartContext);
   const { id } = useParams(); //Siempre devuelve un objeto {}
 
   useEffect(() => {
@@ -21,6 +23,7 @@ const ItemDetailContainer = () => {
   const onAdd = (quantity) => {
     console.log("Se agrego al carrito");
     let productoCarrito = { ...item, quantity };
+    addToCart(productoCarrito);
   };
 
   return <ItemDetail item={item} onAdd={onAdd} />;
