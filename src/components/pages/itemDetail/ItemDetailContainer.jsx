@@ -3,12 +3,15 @@ import { ItemDetail } from "./ItemDetail";
 import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
   const [loading, setLoading] = useState(true);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, getTotalQuantityById } = useContext(CartContext);
   const { id } = useParams(); //Siempre devuelve un objeto {}
+
+  let totalItems = getTotalQuantityById(id);
 
   useEffect(() => {
     let product = products.find((product) => product.id === id);
@@ -21,11 +24,17 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   const onAdd = (quantity) => {
-    console.log("Se agrego al carrito");
     let productoCarrito = { ...item, quantity };
     addToCart(productoCarrito);
+    Swal.fire({
+      position: "bottom-end",
+      icon: "success",
+      title: "Se agrego al carrito",
+      showConfirmButton: false,
+      timer: 1800,
+    });
   };
 
-  return <ItemDetail item={item} onAdd={onAdd} />;
+  return <ItemDetail item={item} onAdd={onAdd} totalItems={totalItems} />;
 };
 export default ItemDetailContainer;

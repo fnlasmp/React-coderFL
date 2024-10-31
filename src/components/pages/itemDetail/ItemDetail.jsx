@@ -1,14 +1,17 @@
 import React from "react";
 import CounterContainer from "../../common/counter/CounterContainer";
-import { products } from "../../../productsMock";
 
-export const ItemDetail = ({ item, onAdd }) => {
+export const ItemDetail = ({ item, onAdd, totalItems }) => {
   return (
     <div>
       <h1>{item.title}</h1>
-      <h2>{item.description}</h2>
+      {/*<h2>Ya tienes {totalItems} unidades en el carrito</h2>*/}
 
-      <CounterContainer onAdd={onAdd} stock={item.stock} />
+      <CounterContainer
+        onAdd={onAdd}
+        stock={item.stock}
+        totalItems={totalItems}
+      />
     </div>
   );
 };

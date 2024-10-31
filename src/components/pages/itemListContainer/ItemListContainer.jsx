@@ -7,7 +7,6 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   const { categoryName } = useParams();
-  console.log(categoryName);
 
   //va a ser falsy en home y thruty en la categoria
 
@@ -34,8 +33,9 @@ const ItemListContainer = () => {
 
     getProducts
       .then((response) => {
-        console.log("entro en el then ", response);
-        setItems(response);
+        setTimeout(() => {
+          setItems(response);
+        }, 1500);
       })
 
       .catch((err) => {

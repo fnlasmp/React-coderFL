@@ -2,14 +2,19 @@ import { categories } from "./categories";
 import CartWidget from "../../common/cartWidget/CartWidget";
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [darkMode, setDarkMode] = useState(true);
+  const tooggleMode = () => {
+    setDarkMode(!darkMode);
+  };
   return (
     <div className="container-navbar">
       {/* logo */}
       {/* El Link solo se usa para nuestras rutas, para pag. externas (a href) */}
       {/* Para darle estilo en css es considerado un anchor 'a' */}
-      <Link to="/">Ubuy</Link>
+      <Link to="/">Ubuy Store</Link>
       {/* listado */}
       <ul>
         {/* <li>Todo</li>

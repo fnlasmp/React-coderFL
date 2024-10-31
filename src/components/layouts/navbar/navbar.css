@@ -1,7 +1,7 @@
 .container-navbar {
   display: flex;
   justify-content: space-between;
-  background-color: green;
+  background-color: #efba34;
   align-items: left;
   height: 50px;
   padding: 0 50px;
@@ -16,4 +16,25 @@
 
 li {
   list-style: none;
+}
+
+.container-nav-dark {
+  display: flex;
+  justify-content: space-between;
+  background-color: #000027;
+  color: white;
+  align-items: center;
+  height: 50px;
+  padding: 0 50px;
+}
+
+.container-nav-dark ul {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

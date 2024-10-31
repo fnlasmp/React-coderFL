@@ -2,8 +2,8 @@ import React from "react";
 import Counter from "./Counter";
 import { useState } from "react";
 
-const CounterContainer = ({ onAdd, stock }) => {
-  const [contador, setContador] = useState(1); //x = [variable, funcion que hace camb.](array)
+const CounterContainer = ({ onAdd, stock, totalItems }) => {
+  const [contador, setContador] = useState(totalItems); //x = [variable, funcion que hace camb.](array)
 
   const sumar = () => {
     if (contador < stock) {
