@@ -6,37 +6,28 @@ import { useState } from "react";
 
 const Navbar = () => {
   const [darkMode, setDarkMode] = useState(true);
-  const tooggleMode = () => {
+  const toggleMode = () => {
     setDarkMode(!darkMode);
   };
+
   return (
-    <div className="container-navbar">
-      {/* logo */}
-      {/* El Link solo se usa para nuestras rutas, para pag. externas (a href) */}
-      {/* Para darle estilo en css es considerado un anchor 'a' */}
-      <Link to="/">Ubuy Store</Link>
-      {/* listado */}
-      <ul>
-        {/* <li>Todo</li>
-        <li>Hombre</li>
-        <li>Mujer</li> */}
-
-        {/* <Link to="">Todas</Link>
-        <Link to="/category/remeras">Remeras</Link>
-        <Link to="/category/pantalones">Pantalones</Link>
-        <Link to="/category/shorts">Shorts</Link> */}
-
+    <nav className={`navbar ${darkMode ? "dark" : "light"}`}>
+      <Link to="/" className="logo">
+        Ubuy Store
+      </Link>
+      <ul className="nav-links">
         {categories.map(({ title, path }) => (
-          <Link key={title} to={path}>
-            {title}
-          </Link>
+          <li key={title}>
+            <Link to={path} className="nav-link">
+              {title}
+            </Link>
+          </li>
         ))}
       </ul>
-      {/* carrito */}
-      <Link to="/cart">
+      <Link to="/cart" className="cart-link">
         <CartWidget />
       </Link>
-    </div>
+    </nav>
   );
 };
 

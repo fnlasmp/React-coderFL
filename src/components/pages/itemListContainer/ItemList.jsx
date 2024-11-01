@@ -14,6 +14,7 @@ const ItemList = ({ items }) => {
       }}
     >
       <h2>Nuestros productos</h2>
+
       {items.length > 0 ? (
         items.map((item) => {
           return <ProductCard key={item.id} {...item} />;

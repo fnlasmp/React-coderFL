@@ -1,42 +1,38 @@
 export const products = [
-  {
-    id: "1",
-    title: "remera Polo",
+  /* {
+    title: "Remera basica",
     price: "1000",
-    description: "descripcion de una remera",
+    description: "Remera basica blanca",
     imageUrl:
       "https://res.cloudinary.com/dp0zju2rd/image/upload/v1728074240/tshirt1_bwoikf.jpg",
     stock: "7",
     category: "remeras",
   },
   {
-    id: "2",
-    title: "pantalon formal",
+    title: "Pantalon formal",
     price: "1500",
-    description: "descripcion de un pantalon",
+    description: "Pantalon formal basico",
     imageUrl:
       "https://res.cloudinary.com/dp0zju2rd/image/upload/v1728074240/formalpant1_iff23i.jpg",
     stock: "10",
     category: "pantalones",
   },
   {
-    id: "3",
-    title: "jean",
+    title: "Jean",
     price: "1800",
-    description: "descripcion de un pantalon de jean",
+    description: "Pantalon de Jean basico",
     imageUrl:
       "https://res.cloudinary.com/dp0zju2rd/image/upload/v1728074240/jean1_klk6bs.jpg",
     stock: "8",
     category: "pantalones",
   },
   {
-    id: "4",
-    title: "short de baño",
+    title: "Short de baño",
     price: "800",
-    description: "descripcion de un short",
+    description: "Short de baño basico",
     imageUrl:
       "https://res.cloudinary.com/dp0zju2rd/image/upload/v1728074241/swimshort1_jc1z0c.jpg",
     stock: "6",
     category: "shorts",
-  },
+  }, */
 ];
