@@ -1,0 +1,21 @@
+.footer {
+  background-color: #000027;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.icons {
+  margin-top: 10px;
+}
+
+.icon {
+  color: white;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: transform 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}

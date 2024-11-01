@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Cart = ({ cart, clearCart, deleteProductById, total, totalItems }) => {
@@ -60,6 +61,11 @@ const Cart = ({ cart, clearCart, deleteProductById, total, totalItems }) => {
           >
             Limpiar carrito
           </Button>
+          <Link to="/checkout">
+            <Button sx={{ marginTop: 20 }} variant="contained">
+              Finalizar compra
+            </Button>
+          </Link>
         </>
       ) : (
         <h2>No tienes items en el carrito.</h2>

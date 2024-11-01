@@ -4,6 +4,8 @@ import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import Swal from "sweetalert2";
+import { collection, getDoc, doc } from "firebase/firestore";
+import { db } from "../../../config-firebase";
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
@@ -14,13 +16,10 @@ const ItemDetailContainer = () => {
   let totalItems = getTotalQuantityById(id);
 
   useEffect(() => {
-    let product = products.find((product) => product.id === id);
-    if (product) {
-      setItem(product);
-    } else {
-      console.error("Product not found");
-    }
-    setLoading(false); // Cambia el estado de carga
+    let productCollection = collection(db, "Productos");
+    let refDoc = doc(productCollection, id);
+    let getProduct = getDoc(refDoc);
+    getProduct.then((res) => setItem({ ...res.data(), id: res.id }));
   }, [id]);
 
   const onAdd = (quantity) => {
